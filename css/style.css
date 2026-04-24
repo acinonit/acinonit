@@ -9959,3 +9959,63 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  animation: pulse 1.5s infinite;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.mobile-cta {
+  display: none;
+}
+
+.mobile-cta a {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  z-index: 9998;
+  text-decoration: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-cta {
+    display: block;
+  }
+
+  /* avoid overlap with WhatsApp button */
+  .whatsapp-float {
+    bottom: 80px;
+  }
+}
+
+
