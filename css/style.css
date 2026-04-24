@@ -10016,3 +10016,8 @@ textarea.form-control {
     bottom: 80px;
   }
 }
+
+footer {
+  position: relative;
+  z-index: 1;
+}
