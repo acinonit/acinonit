@@ -9972,8 +9972,12 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 9999;
-  animation: pulse 1.5s infinite;
+  z-index: 99999;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
 }
 
 .whatsapp-float img {
@@ -9981,41 +9985,34 @@ textarea.form-control {
   height: 35px;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
 
 .mobile-cta {
   display: none;
-}
-
-.mobile-cta a {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 99998;
+}
+
+.mobile-cta a {
+  display: block;
   background: #0d6efd;
   color: #fff;
   text-align: center;
   padding: 14px;
   font-weight: 600;
-  font-size: 16px;
-  z-index: 9998;
   text-decoration: none;
 }
 
-/* Show only on mobile */
+/* ONLY MOBILE */
 @media (max-width: 768px) {
   .mobile-cta {
     display: block;
   }
 
-  /* avoid overlap with WhatsApp button */
+  /* move WhatsApp above mobile bar */
   .whatsapp-float {
     bottom: 80px;
   }
 }
-
-
